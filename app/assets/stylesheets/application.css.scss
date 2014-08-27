@@ -14,7 +14,9 @@
  *= require_self
  */
 
-  
+  body {
+    background-color: #FFFF00;
+        }
 
   #banner {
  background: #9c9;
@@ -23,7 +25,13 @@
  font: small-caps 40px/40px "Times New Roman", serif;
  color: #282;
  text-align: center;
+           
+     .locale {
+      float: right;
+      margin: -0.25em 0.1em; 
+     } 
 
+ 
  img {
  float: right;
  height :80px;

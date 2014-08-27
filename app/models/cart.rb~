@@ -11,7 +11,18 @@ class Cart < ActiveRecord::Base
       current_item.quantity += 1
      else
        current_item = line_items.build(product_id: product_id)
-   end
+     end
         current_item 
-    end
+     end
+  
+     
+     def down
+       LineItem.where("quantity>1").each do |line_item|
+       line_item.quantity.times do
+        LineItem.create cart_id: line_item.cart_id,
+        product_id: line_item.product_id, quantity: 1
+    end 
+   line_item.destroy
+  end
+ end
 end
