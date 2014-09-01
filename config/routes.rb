@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'show' => 'admin#show'
   get 'admin' => 'admin#index'
   controller :sessions do
   get 'login' => :new
@@ -12,7 +13,13 @@ Rails.application.routes.draw do
 
   
   resources :users
-
+ 
+  get 'store/index'
+  resources :products do
+     get :who_bought, on: :member
+  end
+ 
+  
   scope '(:locale)' do
   resources :orders
 
@@ -21,12 +28,11 @@ Rails.application.routes.draw do
   resources :carts
   root 'store#index', as: 'store', via: :all
   end
-
-  get 'store/index'
-
-  resources :products do
-     get :who_bought, on: :member
-  end
+    get 'en/faq' => 'orders#faq'
+    get 'en/contact' => 'store#contact'
+   
+ 
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

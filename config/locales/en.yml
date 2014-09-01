@@ -26,8 +26,8 @@ en:
     application:
       title:      "Online Shopping"
       home:       "Home"
-      questions:  "Questions"
-      news:       "News"
+      faq:        "faq"
+      
       contact:    "Contact"
 
   store:

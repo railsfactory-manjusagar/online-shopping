@@ -7,3 +7,11 @@ one:
 two:
   name: moula
   password_digest: <%= BCrypt::Password.create('9945890781') %>
+
+ 
+ 
+three:
+  name: mou
+  password_digest: <%= BCrypt::Password.create('9945890781') %
+
+ 

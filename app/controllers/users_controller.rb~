@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @users = User.order(:name)
   end
 
+ 
   # GET /users/1
   # GET /users/1.json
   def show

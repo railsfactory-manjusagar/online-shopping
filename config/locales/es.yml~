@@ -4,8 +4,7 @@ es:
     application:
       title:     "las compras en línea"
       home:      "Inicio"
-      questions: "Preguntas"
-      news:      "Noticias"
+      faq:       "Preguntas"
       contact:   "Contacto"
 
   store:

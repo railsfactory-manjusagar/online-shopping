@@ -16,14 +16,6 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { name: 'manju sagar', password: '9945890781', password_confirmation: '9945890781' }
-    end
-
-    assert_redirected_to user_path
-  end
-
   test "should show user" do
     get :show, id: @user
     assert_response :success
@@ -47,3 +39,4 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to users_path
   end
 end
+
