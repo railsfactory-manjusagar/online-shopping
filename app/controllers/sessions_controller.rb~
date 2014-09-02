@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
    user = User.find_by(name: params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-        redirect_to admin_url
+        redirect_to store_url
        else
       redirect_to admin_url, alert: "Invalid user/password combination"
   end
@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
    session[:user_id] = nil
+   session[:cart_id] = nil
    redirect_to store_url, notice: "Logged out"
   end
 end

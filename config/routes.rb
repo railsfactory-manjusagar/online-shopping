@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'show' => 'admin#show'
+  
   get 'admin' => 'admin#index'
   controller :sessions do
   get 'login' => :new
@@ -25,7 +25,9 @@ Rails.application.routes.draw do
 
   resources :line_items
  
-  resources :carts
+  resources :carts do
+  delete 'logout' => :destroy
+  end
   root 'store#index', as: 'store', via: :all
   end
     get 'en/faq' => 'orders#faq'

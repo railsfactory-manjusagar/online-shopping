@@ -31,6 +31,7 @@
   <% end %>  
  <% end %>
  </div>
+  <% if session[:user_id] %>
  <ul>
  <li><a href="/"><%=t('.home')%></a></li>
  
@@ -38,16 +39,19 @@
  <li><a href="contact.html"><%=t('.contact')%></a></li>
  </ul>
 <span style="color:white">  <%= Time.now %></span>
+    <%= button_to 'Logout', logout_path, method: :delete %>
+ <% else %>
+  <%= button_to 'sign up',new_user_path,method: :get %>
+ <% end %>
    
-   <% if session[:user_id] %>
+  <% if session[:user_id]  %>
  <ul>
  <li><%= link_to 'Orders', orders_path %></li>
  <li><%= link_to 'Products', products_path %></li>
  <li><%= link_to 'Add products', new_product_path %></li>
  <li><%= link_to 'Users', users_path %></li>
  </ul>
- <%= button_to 'Logout', logout_path, method: :delete %>
- <% end %>
+<% end %>
  </div>
  <div id="main">
  <%= yield %>

@@ -4,9 +4,5 @@ class AdminController < ApplicationController
    
   end
 
-  def show
-     Order.all.each do |order|
-       @item = order.id.product
-  end
-end
+ 
 end
